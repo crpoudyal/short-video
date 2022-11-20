@@ -22,30 +22,28 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                child: Column(
-                  children: [
-                    TextInputField(
-                      controller: _emailController,
-                      labelText: 'Email',
-                      icon: Icons.email,
-                    ),
-                    TextInputField(
-                      controller: _passwordController,
-                      labelText: 'Password',
-                      isObscure: true,
-                      icon: Icons.lock,
-                    ),
-                    ElevatedButton(onPressed: (){}, child: const Text("Login")),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [const Text("Doesn't have an account?"),TextButton(onPressed: (){}, child: const Text("Signup Now"))],
-                    )
-                  ],
-                ),
+              Column(
+                children: [
+                  TextInputField(
+                    controller: _emailController,
+                    labelText: 'Email',
+                    icon: Icons.email,
+                  ),
+                  TextInputField(
+                    controller: _passwordController,
+                    labelText: 'Password',
+                    isObscure: true,
+                    icon: Icons.lock,
+                  ),
+                  ElevatedButton(onPressed: (){}, child: const Text("Login")),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [const Text("Doesn't have an account?"),TextButton(onPressed: (){}, child: const Text("Signup Now"))],
+                  )
+                ],
               )
             ],
           ),
