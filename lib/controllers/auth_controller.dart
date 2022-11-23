@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -7,13 +6,32 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shortvideo/utils/constant.dart';
 import 'package:shortvideo/models/user.dart' as model;
+import 'package:shortvideo/views/screens/auth/login_screen.dart';
+import 'package:shortvideo/views/screens/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
 
   late Rx<File?> _pickedImage;
+  late Rx<User?> _user;
 // getter method for image
   File? get profilePhoto => _pickedImage.value;
+
+  @override
+  void onReady() {
+    super.onReady();
+    _user = Rx<User?>(firebaseAuth.currentUser);
+    _user.bindStream(firebaseAuth.authStateChanges());
+    ever(_user, (callback) => _setInitialScreen);
+  }
+
+  _setInitialScreen(User? user) {
+    if (user == null) {
+      Get.offAll(() => LoginScreen());
+    } else {
+      Get.offAll(() => HomeScreen());
+    }
+  }
 
 //  pick Image
   pickImage() async {
