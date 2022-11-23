@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "240218528527",
+    "project_id": "shortvideo-3958b",
+    "storage_bucket": "shortvideo-3958b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240218528527:android:88268093cb424b41b63c7a",
+        "android_client_info": {
+          "package_name": "com.example.shortvideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240218528527-i5s313bg5bmmdc37erq1de9srjcg0fbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp351GxNC-I_kDkfH9xGsgnaRoxQ1f_Ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240218528527-i5s313bg5bmmdc37erq1de9srjcg0fbj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "240218528527-rjui8g1vg2agrtmkcsitto7bblmgf6k7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shortvideo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

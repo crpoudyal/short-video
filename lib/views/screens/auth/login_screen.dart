@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shortvideo/controllers/auth_controller.dart';
+import 'package:shortvideo/utils/constant.dart';
+import 'package:shortvideo/views/screens/auth/signup_screen.dart';
 import 'package:shortvideo/views/widgets/text_input_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -35,13 +39,17 @@ class LoginScreen extends StatelessWidget {
                     isObscure: true,
                     icon: Icons.lock,
                   ),
-                  ElevatedButton(onPressed: (){}, child: const Text("Login")),
+                  ElevatedButton(onPressed: (){
+                    authController.loginUser(email: _emailController.text, password: _passwordController.text);
+                  }, child: const Text("Login")),
                   const SizedBox(
                     height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [const Text("Doesn't have an account?"),TextButton(onPressed: (){}, child: const Text("Signup Now"))],
+                    children: [const Text("Doesn't have an account?"),TextButton(onPressed: (){
+                      Get.to(()=>SignupScreen());
+                    }, child: const Text("Signup Now"))],
                   )
                 ],
               )
